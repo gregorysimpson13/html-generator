@@ -49,8 +49,12 @@ def run_program(template, data, output_folder):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='Create HTML files from template using json data')
-    parser.add_argument('-o', '--outdir', dest='output_folder', default='out')
-    parser.add_argument('-t', '--template', dest='template', required=True)
-    parser.add_argument('-j', '--json', dest='data', required=True)
+    parser.add_argument('-o', '--outdir', dest='output_folder',
+                        default='out', help="directory for the output html files")
+    required_args = parser.add_argument_group('required arguments')
+    required_args.add_argument('-t', '--template', dest='template', required=True,
+                               help="template HTML file that will be used to replace data")
+    required_args.add_argument('-j', '--json', dest='data', required=True,
+                               help="data to use to replace HTML file placeholders")
     args = parser.parse_args()
     run_program(args.template, args.data, args.output_folder)
