@@ -9,14 +9,14 @@ from copy import deepcopy
 
 # read the file and return the contents
 def get_file_contents(filename):
-    with open(filename, 'r') as fh:
+    with open(filename, 'r', encoding='utf8') as fh:
         contents = fh.readlines()
     return ''.join(contents)
 
 
 # read the json file and return its contents
 def get_json_contents(filename):
-    with open(filename) as fh:
+    with open(filename, 'r', encoding='utf8') as fh:
         data = json.load(fh)
     return data
 
