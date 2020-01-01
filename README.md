@@ -1,4 +1,4 @@
-#Example
+### Example
 
 This example command should produce two files "page1.html" and "page2.html"
 
